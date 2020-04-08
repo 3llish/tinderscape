@@ -1,0 +1,24 @@
+{
+	"name": "Tinderscape",
+	"version": "1.0",
+	"author": "3llish",
+	"icons": {"16": "logo.png", "48": "logo.png", "128": "logo.png"},
+	"description": "See who likes you on Tinder before losing the chance!",
+	"manifest_version": 2,
+	"permissions": [
+		"activeTab"
+	],
+	"background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+	},
+	"browser_action": {
+		"default_icon": "logo.png"
+	},
+	"content_scripts" : [
+		{
+			"js": ["reveal.js"],
+			"matches": ["https://*.tinder.com/app/likes-you"]
+		}
+	]
+}
